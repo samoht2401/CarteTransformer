@@ -1,0 +1,45 @@
+﻿<Window x:Class="CarteTransformer.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="SharpGL WPF Application" Height="600" Width="800">
+    <TabControl>
+        <TabItem Header="Transform">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition MaxHeight="25" />
+                    <RowDefinition MaxHeight="25" />
+                    <RowDefinition MaxHeight="25" />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition MaxWidth="75" />
+                    <ColumnDefinition MaxWidth="125" />
+                </Grid.ColumnDefinitions>
+
+                <Image Grid.RowSpan="20" Name="Transform_Image"></Image>
+
+                <TextBlock Grid.Column="1">Step :</TextBlock>
+                <ComboBox Name="Step_Selector" Grid.Column="2" SelectionChanged="Step_Selector_SelectionChanged">
+                    <ComboBoxItem>15min</ComboBoxItem>
+                    <ComboBoxItem>30min</ComboBoxItem>
+                    <ComboBoxItem>45min</ComboBoxItem>
+                    <ComboBoxItem>60min</ComboBoxItem>
+                    <ComboBoxItem>120min</ComboBoxItem>
+                    <ComboBoxItem>180min</ComboBoxItem>
+                </ComboBox>
+
+                <TextBlock Grid.Column="1" Grid.Row="1">Duration :</TextBlock>
+                <ComboBox Name="Duration_Selector" Grid.Column="2" Grid.Row="1" SelectionChanged="Step_Selector_SelectionChanged">
+                    <ComboBoxItem>1day</ComboBoxItem>
+                    <ComboBoxItem>1moon</ComboBoxItem>
+                </ComboBox>
+
+                <Button Name="Transform_Button" Grid.Column="1" Grid.Row="2" Grid.ColumnSpan="2" Click="Transform_Button_Click">Transform</Button>
+
+                <TextBox Name="Text_BluePoint" Grid.Column="1" Grid.Row="3" Grid.ColumnSpan="2" AcceptsReturn="True" />
+
+            </Grid>
+        </TabItem>
+    </TabControl>
+</Window>
